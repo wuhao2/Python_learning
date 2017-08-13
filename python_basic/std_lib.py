@@ -59,6 +59,15 @@ random.choice(['apple', 'pear', 'banana']) # 随机选择
 random.sample(range(100), 10)  # 随机采样
 random.random()    # random float
 random.randrange(6)    # random integer chosen from range(6)
+import random
+random.seed( 10 )
+print ("Random number with seed 10 : ", random.random())
+# 生成同一个随机数
+random.seed( 10 )
+print ("Random number with seed 10 : ", random.random())
+# 生成同一个随机数
+random.seed( 10 )
+print ("Random number with seed 10 : ", random.random())
 
 
 
