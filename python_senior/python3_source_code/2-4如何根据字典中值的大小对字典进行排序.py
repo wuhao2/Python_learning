@@ -11,7 +11,7 @@ print(d.values())  # return a list
 
 print(sorted(d))  # sort by key
 print(sorted(d.items(), key=lambda x: x[1]))  # sort by value
-#[('y', 61), ('x', 66), ('c', 75), ('z', 80), ('b', 86), ('a', 97)]
+# [('y', 61), ('x', 66), ('c', 75), ('z', 80), ('b', 86), ('a', 97)]
 
 tuple_data = zip(d.values(), d.keys())
 # save memory space by using iterkeys and itervalues, but itervalues is delete in python3

@@ -11,10 +11,9 @@ def match(expr):
         elif c in right:
             if not s:  # 如果s为空
                 return False
-            if not 1 <= ord(c)-ord(s[-1]) <= 2:
-                return False
+            if not 1 <= ord(c) - ord(s[-1]) <= 2:
+                return False  # 不匹配
             s.pop()
-
     return not s  # 返回ture
 
 print(match('[](){}'))  # True匹配

@@ -43,7 +43,7 @@ class Queue():
 
 q = Queue(4)
 print(q.size)
-print(q.head,q.tail)
+print(q.head, q.tail)
 print(q.isempty())
 print(q.isempty())
 

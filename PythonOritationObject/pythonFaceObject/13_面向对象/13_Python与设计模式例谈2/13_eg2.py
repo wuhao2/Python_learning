@@ -2,7 +2,7 @@ class Water:
     def __init__(self):
         self.name = 'Water'
 
-    def show(self):
+    def show(self) -> object:
         print(self.name)
 
 class Deco:
