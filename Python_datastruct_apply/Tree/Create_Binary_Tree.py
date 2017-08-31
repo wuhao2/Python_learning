@@ -75,7 +75,7 @@ def preOrderIter_stack(root):
         node = s.pop().right  # 先回溯，然后访问右子树（）
 
 from collections import deque
-# 层序遍历二叉树的各个节点----使用队列
+# 层序遍历二叉树的各个节点----使用队列-----先进先出
 def levelOrder_deque(root):
     q = deque([root])  # 初始化时只，将根节点放入队列中
     while q:

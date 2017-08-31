@@ -3,6 +3,6 @@ __author__ = 'wuhao'
 __date__ = '2017/7/25 13:27'
 keys = ["hello", "world", "love you"]
 map(len, keys)    # calulate len(list)
-zip(keys, map(len, keys))
+zip(keys, map(len, keys))  # 返回一个元组对象
 print(list(zip(keys, map(len, keys))))
 print(dict(zip(keys, map(len, keys))))

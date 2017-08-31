@@ -1,5 +1,3 @@
-
-
 # total为背包的总容量，weight_list表示所有物品重量的一个列表
 def knapsack(total, weight_list):
     count = len(weight_list)  # 可选的物品有n个

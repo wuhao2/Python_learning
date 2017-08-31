@@ -22,24 +22,24 @@ __date__ = '2017/8/21 10:39'
 """
 # with open('/path/to/file', 'r') as f:
 #     print(f.read())
-    # 调用read()会一次性读取文件的全部内容，如果文件有10G，
-    # 内存就爆了，所以，要保险起见，可以反复调用read(size)方法，
-    # 每次最多读取size个字节的内容。另外，调用readline()可以每次读取一行内容，
-    # 调用readlines()一次读取所有内容并按行返回list。因此，要根据需要决定怎么调用。
-    # 如果文件很小，read()一次性读取最方便；如果不能确定文件大小，
-    # 反复调用read(size)比较保险；如果是配置文件，调用readlines()最方便：
-    # f = open('/Users/michael/test.jpg', 'rb')
+# 调用read()会一次性读取文件的全部内容，如果文件有10G，
+# 内存就爆了，所以，要保险起见，可以反复调用read(size)方法，
+# 每次最多读取size个字节的内容。另外，调用readline()可以每次读取一行内容，
+# 调用readlines()一次读取所有内容并按行返回list。因此，要根据需要决定怎么调用。
+# 如果文件很小，read()一次性读取最方便；如果不能确定文件大小，
+# 反复调用read(size)比较保险；如果是配置文件，调用readlines()最方便：
+# f = open('/Users/michael/test.jpg', 'rb')
 
-    # 字符编码
-    # 要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数，
-    # 例如，读取GBK编码的文件：
-    # f = open('/Users/michael/gbk.txt', 'r', encoding='gbk')
+# 字符编码
+# 要读取非UTF-8编码的文本文件，需要给open()函数传入encoding参数，
+# 例如，读取GBK编码的文件：
+# f = open('/Users/michael/gbk.txt', 'r', encoding='gbk')
 
-    # 遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，
-    # 因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，
-    # open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。
-    # 最简单的方式是直接忽略：
-    # f = open('/Users/michael/gbk.txt', 'r', encoding='gbk', errors='ignore')
+# 遇到有些编码不规范的文件，你可能会遇到UnicodeDecodeError，
+# 因为在文本文件中可能夹杂了一些非法编码的字符。遇到这种情况，
+# open()函数还接收一个errors参数，表示如果遇到编码错误后如何处理。
+# 最简单的方式是直接忽略：
+# f = open('/Users/michael/gbk.txt', 'r', encoding='gbk', errors='ignore')
 
 
 """
@@ -50,6 +50,7 @@ StringIO顾名思义就是在内存中读写str。
 要把str写入StringIO，我们需要先创建一个StringIO，然后，像文件一样写入即
 """
 from io import StringIO
+
 f = StringIO()
 f.write('hello')
 f.write('wuhao')
@@ -60,7 +61,7 @@ f = StringIO('Hello!\nHi!\nGoodbye!')
 while True:
     s = f.readline()
     if s == '':
-       break
+        break
     print(s.strip())
 
 """
@@ -70,6 +71,7 @@ StringIO操作的只能是str，如果要操作二进制数据，就需要使用
 BytesIO实现了在内存中读写bytes，我们创建一个BytesIO，然后写入一些bytes：
 """
 from io import BytesIO
+
 f = BytesIO()
 f.write('中国'.encode('utf-8'))
 print(f.getvalue())  # b'\xe4\xb8\xad\xe5\x9b\xbd'
@@ -81,6 +83,7 @@ print(f.read())  # b'\xe4\xb8\xad\xe6\x96\x87'
 
 ############################################################
 import os
+
 os.name
 # os.uname()
 os.environ
@@ -101,27 +104,26 @@ os.rmdir('testdir')  # 删掉一个目录:
 # os.path.join()返回这样的字符串：part-1/part-2
 # 而Windows下会返回这样的字符串：part-1\part-2
 
-#拆分路径时，也不要直接去拆字符串，而要通过os.path.split()函数，
+# 拆分路径时，也不要直接去拆字符串，而要通过os.path.split()函数，
 # 这样可以把一个路径拆分为两部分，后一部分总是最后级别的目录或文件名
 
 # 对文件重命名:
 # os.rename('test.txt', 'test.py')
 # 删掉文件:
 # os.remove('test.py')
-#os.path.splitext()可以直接让你得到文件扩展名，很多时候非常方便：
+# os.path.splitext()可以直接让你得到文件扩展名，很多时候非常方便：
 l = [x for x in os.listdir('.') if os.path.isdir(x)]
 l1 = [x for x in os.listdir('.') if os.path.isfile(x)
-                                and os.path.splitext(x)[1]=='.py']
+      and os.path.splitext(x)[1] == '.py']
 print(l, '\n', l1)
-
-
 
 ###########################################################################
 # 幸运的是shutil模块提供了copyfile()的函数，
 # 你还可以在shutil模块中找到很多实用函数，
 # 它们可以看做是os模块的补充。
 import shutil
-shutil.copyfileobj(open('old.xml','r'), open('new.xml', 'w'))  # 将文件内容拷贝到另一个文件中
+
+shutil.copyfileobj(open('old.xml', 'r'), open('new.xml', 'w'))  # 将文件内容拷贝到另一个文件中
 shutil.copyfile('f1.log', 'f2.log')  # 拷贝文件
 shutil.copymode('f1.log', 'f2.log')  # 仅拷贝权限。内容、组、用户均不变
 shutil.copystat('f1.log', 'f2.log')  # 仅拷贝状态的信息，包括：mode bits, atime, mtime, flags
@@ -135,11 +137,11 @@ shutil.rmtree('folder1')
 # 递归的去移动文件，它类似mv命令，其实就是重命名。
 shutil.move('folder1', 'folder3')
 
-#将 当前目录 下的文件打包放置 当前目录
+# 将 当前目录 下的文件打包放置 当前目录
 ret = shutil.make_archive("./package", 'gztar', root_dir='.')
 
-
 import zipfile
+
 # 压缩
 z = zipfile.ZipFile('laxi.zip', 'w')
 z.write('a.log')
@@ -150,6 +152,7 @@ z = zipfile.ZipFile('laxi.zip', 'r')
 z.extractall()
 z.close()
 import tarfile
+
 # 压缩
 tar = tarfile.open('your.tar', 'w')
 tar.add('/Users/wupeiqi/PycharmProjects/bbs2.log', arcname='bbs2.log')
@@ -161,4 +164,3 @@ tar.extractall()  # 可设置解压地址
 tar.close()
 
 ################################################################################
-

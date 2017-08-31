@@ -263,6 +263,7 @@ def char2num(s):
 print(reduce(fn, [1, 3, 5, 7, 9]))  # 13579
 print(reduce(fn, map(char2num, '13579')))  # 将字符转换成整数
 print(reduce(lambda x, y: x*10+y, map(char2num, '13579')))  # 将字符转换成整数
+
 """
 惰性序列
 filter()函数返回的是一个Iterator，也就是一个惰性序列，

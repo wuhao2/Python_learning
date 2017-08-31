@@ -2,10 +2,10 @@
 __author__ = 'wuhao'
 __date__ = '2017/8/17 13:40'
 
-# l = [1, 2, 3, 4]
-# print(l.__iter__())  # 返回迭代器对象
-# for i in l:
-#     print(i)
+l = [1, 2, 3, 4]
+print(l.__iter__())  # 返回迭代器对象
+for i in l:
+    print(i)
 
 # import requests
 # def getWeather(city):

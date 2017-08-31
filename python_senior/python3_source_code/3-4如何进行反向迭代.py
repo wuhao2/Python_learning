@@ -1,16 +1,18 @@
 # _*_ coding: utf-8 _*_
 __author__ = 'wuhao'
 __date__ = '2017/8/17 15:50'
-l = [1, 2, 3, 4]
-for x in l:
-    print(x, ' ', end='')
-
-# 列表的反向迭代
-for x in reversed(l):
-    print(x, ' ', end='')
-
-ll = l[::-1]
-print(ll)
+# l = [1, 2, 3, 4]
+# for x in l:
+#     print(x, ' ', end='')
+#
+# print()
+# # 列表的反向迭代
+# for x in reversed(l):
+#     print(x, ' ', end='')
+#
+# print()
+# ll = l[::-1]
+# print(ll)
 
 class FloatRange:
     def __init__(self, start, end, step=0.1):

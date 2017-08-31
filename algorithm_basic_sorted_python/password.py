@@ -9,25 +9,31 @@ __date__ = '2017/7/9 12:21'
 
 3.最终set集合的长度即是结果
 """
+
+
 def test():
     passwd = set()
     str = input()
     print(type(str), str)
     lenght = len(str)
-    print(len)
+    # print(len)
 
     if str == "A":
         # print("1")
         return print(lenght)
 
-
     for i in range(0, lenght):
         if i == 0:
-            passwd.add(str[i+1:])
+            passwd.add(str[i + 1:])
         else:
-            string = str[:i] + str[i+1:lenght]
+            string = str[:i] + str[i + 1:lenght]
             passwd.add(string)
 
     print(passwd.__str__())
     print(len(passwd))
 test()
+
+# wuhao
+# <class 'str'> wuhao
+# {'wuha', 'wuho', 'whao', 'uhao', 'wuao'}
+# 5

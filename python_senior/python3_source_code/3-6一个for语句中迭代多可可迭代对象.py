@@ -14,8 +14,8 @@ for c, m, e in zip(Chinese, math, English):  # 在一个for语句中，并行迭
     total.append(c + m + e)
 print('total:', total)
 
-
-from itertools import chain
+##############################################################################
+from itertools import chain  # 用链条连起来迭代
 count = 0
 for x in chain(Chinese, math, English):  # 在一个for语句中，串行迭代
     if x > 90:

@@ -16,7 +16,7 @@ def yanghui(k):
 
     return list(q)
 # 测试
-for i in range(100):
+for i in range(10):
     print(yanghui(i))
 # print(yanghui(0))
 # print(yanghui(1))

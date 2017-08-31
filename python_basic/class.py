@@ -12,15 +12,18 @@ __date__ = '2017/7/9 20:31'
 
 
 """ 类定义"""
+
+
 class people(object):
     # 定义基本属性
     name = ''
     age = 0
     # 定义私有属性,私有属性在类外部无法直接进行访问
     __weight = 0
+
     # 定义构造方法
 
-    def __init__(self,n,a,w):
+    def __init__(self, n, a, w):
         self.name = n
         self.age = a
         self.__weight = w
@@ -33,7 +36,6 @@ class people(object):
 # p.speak()
 
 """单继承示例"""
-
 class student(people):
     grade = ''
 
@@ -46,6 +48,7 @@ class student(people):
     def speak(self):
         print("%s is speaking: I am %d years old,and I am in grade %d" % (self.name, self.age, self.grade))
 
+
 # s = student('ken', 20, 60, 3)
 # s.speak()
 
@@ -54,27 +57,31 @@ class speaker(object):
     topic = ''
     name = ''
 
-    def __init__(self,n,t):
+    def __init__(self, n, t):
         self.name = n
         self.topic = t
 
     def speak(self):
-        print("I am %s,I am a speaker!My topic is %s"%(self.name,self.topic))
+        print("I am %s,I am a speaker!My topic is %s" % (self.name, self.topic))
+
+
 """
 多重继承
 需要注意圆括号中父类的顺序，若是父类中有相同的方法名，而在子类使用时未指定，
 python从左至右搜索 即方法在子类中未找到时，从左到右查找父类中是否包含方法
 """
-class sample(speaker,student):
+
+
+class sample(speaker, student):
     a = ''
 
     def __init__(self, n, a, w, g, t):
         student.__init__(self, n, a, w, g)
         speaker.__init__(self, n, t)
 
+
 test = sample("Tim", 25, 80, 4, "Python")
 test.speak()  # 方法名同，默认调用的是在括号中排前地父类的方法
-
 
 """
 类私有方法

@@ -2,7 +2,6 @@
 left = {'(', '[', '{'}
 right = {')', ']', '}'}
 
-
 def match(expr):
     s = []
     for c in expr:

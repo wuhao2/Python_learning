@@ -15,9 +15,9 @@ def matrixMul2(A, B):
 a = [[1, 2], [3, 4], [5, 6], [7, 8]]
 b = [[1, 2, 3, 4], [5, 6, 7, 8]]
 
-# print(matrixMul(a, b))
-# print(matrixMul(b, a))
-# print("-"*90)
+print(matrixMul(a, b))
+print(matrixMul(b, a))
+print("-"*90)
 
 # print(matrixMul2(a, b))
 # print(matrixMul2(b, a))
@@ -50,10 +50,10 @@ matrix = [
 # print(transpose)
 
 # way 3
-transposed = []
-for i in range(len(matrix[0])):
-    transposed_row = []  # 转置矩阵的行
-    for row in matrix:
-        transposed_row.append(row[i])
-    transposed.append(transposed_row)
-print(transposed)
+# transposed = []
+# for i in range(len(matrix[0])):
+#     transposed_row = []  # 转置矩阵的行
+#     for row in matrix:
+#         transposed_row.append(row[i])
+#     transposed.append(transposed_row)
+# print(transposed)

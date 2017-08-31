@@ -13,7 +13,7 @@ print(s.strip())   # 只去掉两端空白
 
 print('&&&&&&'*10)
 s1 = '+++sd::ff----'
-print(s1.strip('+-'))  # sd::ff去掉两边的---+++
+print(s1.strip('+-'))  # sd::ff  去掉两边的---+++
 print('&&&&&&'*10)
 s2 = s1[:5] + s1[7:]  # +++sdff----切片加拼接，去掉了：：
 print(s2)
