@@ -1,5 +1,6 @@
+# coding:utf8
 from mysql.connector import connect
-#python连接mariadb数据库
+# python连接mariadb数据库
 db_name = {
     'host':'localhost',
     'database':'test',

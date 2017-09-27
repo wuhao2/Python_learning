@@ -17,4 +17,4 @@ def removeElement(A, elem):
         A.remove(elem)
         return len(A)
 A = [1, 3, 4, 6]
-print(removeElement(A, 3))  #3
+print(removeElement(A, 3))  # 3

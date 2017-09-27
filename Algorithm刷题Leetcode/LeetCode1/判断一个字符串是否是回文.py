@@ -12,7 +12,7 @@ import re
 def isPalindrome(s):
     s = s.lower()  # 首先将字符串转为小写
     s = re.sub('[^A-Za-z0-9]', '', s)  # 正则表达式去除非字母和数字的符号
-    if s == s[::-1]:
+    if s == s[::-1]:  # 直接翻转列表 判断是否相等
         return True
     else:
         return False

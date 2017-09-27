@@ -20,15 +20,15 @@ def merge(A, m, B, n):
     # @param n  an integer, length of B
     # @return nothing
     '''
-    for i in range(m+n-1, -1, -1):
-
-        if m == 0 or (n>0 and B[n-1] > A[m-1]):
-            A[i] = B[n-1]
-            n -= 1
-        else:
-            A[i] = A[m-1]
-            m -= 1
-    return A
+    def merge(A, m, B, n):
+        for i in range(m+n-1, -1, -1):
+            if m == 0 or (n > 0 and B[n-1] > A[m-1]):  # 判断A、B是否为空
+                A[i] = B[n-1]
+                n -= 1
+            else:
+                A[i] = A[m-1]
+                m -= 1
+        return A
 A = [2, 3, 4]
 B = [3, 5, 7]
 print(merge(A, 3, B, 3))

@@ -14,7 +14,7 @@ def twoSum(num, target):
     tmp = {}
     for i in range(len(num)):
         if target - num[i] in tmp:
-            return tmp[target - num[i]] + 1, i + 1
+            return tmp[target - num[i]] + 1, i + 1  # 返回下标
         else:
             tmp[num[i]] = i
 

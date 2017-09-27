@@ -1,19 +1,20 @@
+# coding:utf8
 from db_set import *
 
 sql_string_dict = {
-"create":'create table genral_tab (card_id integer,name text,address text)',
-"insert":
-['insert into genral_tab (card_id,name,address) values (1,"LiMing","East Zone")',
-'insert into genral_tab (card_id,name,address) values (2,"WangMing","West Zone")',
-'insert into genral_tab (card_id,name,address) values (3,"ZhaoMing","South Zone")',
-'insert into genral_tab (card_id,name,address) values (4,"DingMing","North Zone")'],
-"select":'select * from genral_tab',
-"update":'update genral_tab set name="QianMing" where card_id=4',
-"delete":'delete from genral_tab where card_id=3',
+    "create": 'create table genral_tab (card_id integer,name text,address text)',
+    "insert":
+        ['insert into genral_tab (card_id,name,address) values (1,"LiMing","East Zone")',
+         'insert into genral_tab (card_id,name,address) values (2,"WangMing","West Zone")',
+         'insert into genral_tab (card_id,name,address) values (3,"ZhaoMing","South Zone")',
+         'insert into genral_tab (card_id,name,address) values (4,"DingMing","North Zone")'],
+    "select": 'select * from genral_tab',
+    "update": 'update genral_tab set name="QianMing" where card_id=4',
+    "delete": 'delete from genral_tab where card_id=3',
 }
 
-con = connect(**db_name)  #建立连接
-cur = con.cursor()      #获取游标
+con = connect(**db_name)  # 建立连接
+cur = con.cursor()  # 获取游标
 
 print("Create Table:\n")
 cur.execute(sql_string_dict["create"])

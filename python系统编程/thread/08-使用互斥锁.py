@@ -8,10 +8,11 @@ def test1():
     global g_num
     # 这个线程和ｔｅｓｔ2线程都在抢着　对这个锁　进行上锁，如果有１方成功的上锁，那么导致另外
     # 一方会堵塞（一直等待）到这个锁被解开为止
-    mutex.acquire()
+
     for i in range(1000000):
+        mutex.acquire()
         g_num += 1
-    mutex.release()  # 用来对mutex指向的这个锁　进行解锁，，，只要开了锁，
+        mutex.release()  # 用来对mutex指向的这个锁　进行解锁，，，只要开了锁，
     # 那么接下来会让所有因为
     # 这个锁　被上了锁　而堵塞的线程　进行抢着上锁
 
@@ -20,10 +21,11 @@ def test1():
 
 def test2():
     global g_num
-    mutex.acquire()
+
     for i in range(1000000):
+        mutex.acquire()
         g_num += 1
-    mutex.release()
+        mutex.release()  # 将所锁上在for里面，释放之后，所有的线程又开始抢
 
     print("---test2---g_num=%d" % g_num)
 
